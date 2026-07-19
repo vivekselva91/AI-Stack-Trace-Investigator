@@ -1,5 +1,5 @@
 # AI-Stack-Trace-Investigator
-# AI Stack Trace Investigator
+
 
 LLM-assisted **root-cause analysis for Python stack traces**. It parses a
 traceback, pulls in the surrounding source, ranks the likely causes with
