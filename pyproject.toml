@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-stack-trace-investigator"
+version = "0.1.0"
+description = "LLM-assisted root-cause analysis for Python stack traces, with best-effort Docker reproduction."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Vivek Selvakumar" }]
+keywords = ["debugging", "stack-trace", "llm", "anthropic", "claude", "root-cause"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Debuggers",
+]
+dependencies = [
+    "anthropic>=0.39.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+investigate = "investigator.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/vivekselva91/ai-stack-trace-investigator"
+Issues = "https://github.com/vivekselva91/ai-stack-trace-investigator/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
