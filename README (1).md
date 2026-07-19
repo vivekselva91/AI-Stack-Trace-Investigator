@@ -208,6 +208,4 @@ CI runs the parser/ranker tests and the reproduction benchmark on every push.
 
 ---
 
-## License
 
-MIT — see [LICENSE](LICENSE).
